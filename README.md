@@ -2,7 +2,10 @@
 
 ## :memo: Descrição
 
-Desafio Fullture, fazer uma API Rest com NodeJs e Express
+Desafio Fullture, fazer uma API Rest com NodeJs e Express.
+
+  Rotas baseadas em json, utilizando de controllers, use cases, routes e mais, para melhor organização. 
+  Sendo possível pegar todas as transações através de paginação ( get ), criar alguma transação com id único e com verificação de tipo dos dados passados ( post ),   atualizar alguma transação com parametrização do id ( put ) e deletar alguma transação com parametrização do id ( delete ).
 
 ## :wrench: Tecnologias utilizadas
 

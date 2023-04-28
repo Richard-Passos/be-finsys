@@ -6,7 +6,7 @@ class Transactions {
   }
 
   static findOne(value) {
-    return transactionsInMemory.find(({ _id }) => _id === value);
+    return transactionsInMemory.find(({ _id }) => _id === value) ?? null;
   }
 
   static _findOneIndex(value) {

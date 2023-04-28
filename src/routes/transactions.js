@@ -3,7 +3,7 @@ const { transactionsControllers } = require("../controllers");
 
 const transactions = Router();
 
-const { Get, Create, Update, Delete } = transactionsControllers;
+const { Get, GetOne, Create, Update, Delete } = transactionsControllers;
 
 transactions.get("/", (_, res) =>
   res.status(200).json({
@@ -13,6 +13,8 @@ transactions.get("/", (_, res) =>
 );
 
 transactions.get("/transactions", Get.execute);
+
+transactions.get("/transactions/:id", GetOne.execute);
 
 transactions.post("/transactions", Create.execute);
 

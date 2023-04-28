@@ -2,15 +2,17 @@
 
 ## :memo: Descrição
 
-Desafio Fullture, fazer uma API Rest com NodeJs e Express.
+Desafio Fullture, fazer uma API Rest sobre transações usando NodeJs e Express.
 
-  Rotas baseadas em json, utilizando de controllers, use cases, routes e mais, para melhor organização. 
-  Sendo possível pegar todas as transações através de paginação ( get ), criar alguma transação com id único e com verificação de tipo dos dados passados ( post ),   atualizar alguma transação com parametrização do id ( put ) e deletar alguma transação com parametrização do id ( delete ).
+Usando Mongoose para a criação de schema e conectar com o cluster. Sendo possível utilizar de um armazenamento no database ou in memory.
+
+Rotas baseadas em json, utilizando de controllers, use cases, routes e mais para melhor organização. Sendo possível pegar todas as transações através de paginação ( get ), pegar uma única transações através do id ( get ), criar alguma transação com id único e com verificação de tipo dos dados passados ( post ), atualizar alguma transação com parametrização do id ( put ) e deletar uma ou várias transaões com parametrização do id ou type ( delete ).
 
 ## :wrench: Tecnologias utilizadas
 
 - NodeJs;
 - Express;
+- Mongoose
 - JavaScript;
 
 ## :rocket: Rodando o projeto
@@ -38,4 +40,4 @@ https://github.com/Richard-Passos/finsys-backend.git
 
 ## :dart: Status do projeto
 
-Em produção
+Finalizado

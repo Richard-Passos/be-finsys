@@ -1,5 +1,5 @@
 const { TransactionsRepository } = require("../../repositores");
-const { verifyTypes, normalizeStr } = require("../../utils");
+const { verifyTypes } = require("../../utils");
 
 class Update {
   static async execute(id, reqBody) {
@@ -7,10 +7,7 @@ class Update {
 
     verifyTypes([], [amount], "Amount must be a number");
 
-    const test = await TransactionsRepository.updateOne(id, reqBody);
-    console.log("file: Update.js:11  Update  execute  test", test)
-
-    return test
+    return await TransactionsRepository.updateOne(id, reqBody);
   }
 }
 

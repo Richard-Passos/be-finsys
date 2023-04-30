@@ -80,10 +80,6 @@ class Transactions {
     let deletedCount = 0;
 
     const transactionsToDelete = this._findManyByType(type);
-    console.log(
-      "file: InMemory.js:83  Transactions  deleteMany  transactionsToDelete",
-      transactionsToDelete
-    );
 
     transactionsToDelete.forEach(({ _id }) => {
       const indexOnDataBase = this._findOneIndex(_id);

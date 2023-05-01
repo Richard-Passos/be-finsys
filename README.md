@@ -2,7 +2,7 @@
 
 ## :memo: Descrição
 
-O FinSys é uma API Rest para controle de transações, criada como desafio Fullture utilizando NodeJs, Express e Mongoose. É possível armazenar as transações no banco de dados ou na memória, com rotas organizadas através de controllers, use cases e routes. 
+Desafio Fullture: O FinSys é uma API Rest para controle de transações, criada como desafio Fullture utilizando NodeJs, Express e Mongoose. É possível armazenar as transações no banco de dados ou na memória, com rotas organizadas através de controllers, use cases e routes. 
 
 As operações disponíveis são:
 - `GET /transactions?page=:number`: Retorna todas as transações com paginação.

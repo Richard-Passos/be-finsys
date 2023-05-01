@@ -2,21 +2,23 @@
 
 ## :memo: Descrição
 
-Desafio Fullture, fazer uma API Rest sobre transações usando NodeJs e Express.
+O FinSys é uma API Rest para controle de transações, criada como desafio Fullture utilizando NodeJs, Express e Mongoose. É possível armazenar as transações no banco de dados ou na memória, com rotas organizadas através de controllers, use cases e routes. 
 
-Usando Mongoose para a criação de schema e conectar com o cluster. Sendo possível utilizar de um armazenamento no database ou in memory.
-
-Rotas baseadas em json, utilizando de controllers, use cases, routes e mais para melhor organização. Sendo possível pegar todas as transações através de paginação ( get ), pegar uma única transações através do id ( get ), criar alguma transação com id único e com verificação de tipo dos dados passados ( post ), atualizar alguma transação com parametrização do id ( put ) e deletar uma ou várias transaões com parametrização do id ou type ( delete ).
+As operações disponíveis são:
+- `GET /transactions?page=:number`: Retorna todas as transações com paginação.
+- `GET /transactions/:id`: Retorna uma única transação pelo ID.
+- `POST /transactions`: Cria uma nova transação com verificação de tipo dos dados passados.
+- `PUT /transactions/:id`: Atualiza uma transação existente com parametrização do ID.
+- `DELETE /transactions/id/:value`: Deleta uma transação existente pelo ID.
+- `DELETE /transactions/type/:value`: Deleta uma ou mais transações pelo tipo.
 
 ## :wrench: Tecnologias utilizadas
-
-- NodeJs;
-- Express;
+- NodeJs
+- Express
 - Mongoose
-- JavaScript;
+- JavaScript
 
 ## :rocket: Rodando o projeto
-
 Para rodar o repositório é recomendado o clonar:
 
 ```

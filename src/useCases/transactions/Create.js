@@ -2,15 +2,13 @@ const { TransactionsRepository } = require("../../repositores");
 const { verifyTypes, normalizeStr } = require("../../utils");
 const { randomUUID } = require("crypto");
 
-class Create {
-  static execute({ title, type, category, amount }) {
-    verifyTypes([title, type, category], [amount]);
+module.exports = ({ title, type, category, amount }) => {
+  verifyTypes([title, type, category], [amount]);
 
-    return TransactionsRepository.createOne(
-      createTransaction(title, type, category, amount)
-    );
-  }
-}
+  return TransactionsRepository.createOne(
+    createTransaction(title, type, category, amount)
+  );
+};
 
 const createTransaction = (title, type, category, amount) => {
   return {
@@ -21,5 +19,3 @@ const createTransaction = (title, type, category, amount) => {
     type: normalizeStr(type).toLowerCase(),
   };
 };
-
-module.exports = Create;

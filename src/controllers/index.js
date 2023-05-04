@@ -1,5 +1,5 @@
-const transactionsControllers = require("./transactions");
+const TransactionsController = require("./Transactions");
 
 module.exports = {
-  transactionsControllers,
+  TransactionsController,
 };

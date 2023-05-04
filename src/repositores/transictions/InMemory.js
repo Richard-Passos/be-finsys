@@ -1,30 +1,21 @@
 const { transactionsInMemory } = require("../../infra/database");
 
 class Transactions {
-  static length() {
-    return transactionsInMemory.length;
-  }
+  static length = () => transactionsInMemory.length;
 
-  static findOne(value) {
-    return transactionsInMemory.find(({ _id }) => _id === value) ?? null;
-  }
+  static findOne = (value) =>
+    transactionsInMemory.find(({ _id }) => _id === value) ?? null;
 
-  static _findOneIndex(value) {
-    return transactionsInMemory.findIndex(({ _id }) => _id === value);
-  }
+  static _findOneIndex = (value) =>
+    transactionsInMemory.findIndex(({ _id }) => _id === value);
 
-  static findMany(page, resPerPage) {
-    return transactionsInMemory.slice(
-      (page - 1) * resPerPage,
-      resPerPage * page
-    );
-  }
+  static findMany = (page, resPerPage) =>
+    transactionsInMemory.slice((page - 1) * resPerPage, resPerPage * page);
 
-  static _findManyByType(value) {
-    return transactionsInMemory.filter(({ type }) => type === value);
-  }
+  static _findManyByType = (value) =>
+    transactionsInMemory.filter(({ type }) => type === value);
 
-  static createOne(transaction) {
+  static createOne = (transaction) => {
     const createdAt = new Date();
     const updatedAt = new Date();
 
@@ -37,9 +28,9 @@ class Transactions {
     transactionsInMemory.push(transaction);
 
     return transaction;
-  }
+  };
 
-  static updateOne(_id, fields) {
+  static updateOne = (_id, fields) => {
     const acknowledged = true;
     let modifiedCount = 0;
 
@@ -61,9 +52,9 @@ class Transactions {
     ).length;
 
     return { acknowledged, modifiedCount };
-  }
+  };
 
-  static deleteOne(_id) {
+  static deleteOne = (_id) => {
     const acknowledged = true;
     let deletedCount = 0;
 
@@ -73,9 +64,9 @@ class Transactions {
     deletedCount = transactionsInMemory.splice(index, 1).length;
 
     return { acknowledged, deletedCount };
-  }
+  };
 
-  static deleteMany(type) {
+  static deleteMany = (type) => {
     const acknowledged = true;
     let deletedCount = 0;
 
@@ -89,7 +80,7 @@ class Transactions {
     });
 
     return { acknowledged, deletedCount };
-  }
+  };
 }
 
 module.exports = Transactions;

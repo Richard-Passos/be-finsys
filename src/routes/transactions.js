@@ -1,9 +1,7 @@
 const { Router } = require("express");
-const { transactionsControllers } = require("../controllers");
+const { TransactionsController } = require("../controllers");
 
 const transactions = Router();
-
-const { Get, GetOne, Create, Update, Delete } = transactionsControllers;
 
 transactions.get("/", (_, res) =>
   res.status(200).json({
@@ -12,15 +10,17 @@ transactions.get("/", (_, res) =>
   })
 );
 
-transactions.get("/transactions", Get.execute);
+transactions.get("/transactions", TransactionsController.getMany);
 
-transactions.get("/transactions/:id", GetOne.execute);
+transactions.get("/transactions/:id", TransactionsController.getOne);
 
-transactions.post("/transactions", Create.execute);
+transactions.post("/transactions", TransactionsController.create);
 
-transactions.put("/transactions/:id", Update.execute);
+transactions.put("/transactions/:id", TransactionsController.update);
 
-/* Field must be id or type */
-transactions.delete("/transactions/:field/:value", Delete.execute);
+transactions.delete(
+  "/transactions/:field/:value" /* Field must be id or type */,
+  TransactionsController.delete
+);
 
 module.exports = transactions;

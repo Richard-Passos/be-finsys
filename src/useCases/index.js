@@ -1,5 +1,5 @@
-const transactionsUseCases = require("./transactions");
+const TransactionsUseCase = require("./Transactions");
 
 module.exports = {
-  transactionsUseCases,
+  TransactionsUseCase,
 };

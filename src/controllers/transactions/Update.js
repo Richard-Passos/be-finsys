@@ -1,25 +1,21 @@
-const { transactionsUseCases } = require("../../useCases");
+const { TransactionsUseCase } = require("../../useCases");
 const { catchError } = require("../../utils");
 
-class Update {
-  static async execute(req, res) {
-    const { params, body } = req;
+module.exports = async (req, res) => {
+  const { params, body } = req;
 
-    try {
-      const { acknowledged, modifiedCount: updatedCount } =
-        await transactionsUseCases.Update.execute(params.id, body);
+  try {
+    const { acknowledged, modifiedCount: updatedCount } =
+      await TransactionsUseCase.update(params.id, body);
 
-      res.status(200).json({
-        status: "Success",
-        info: {
-          acknowledged,
-          updatedCount,
-        },
-      });
-    } catch (err) {
-      catchError(err, res);
-    }
+    res.status(200).json({
+      status: "Success",
+      info: {
+        acknowledged,
+        updatedCount,
+      },
+    });
+  } catch (err) {
+    catchError(err, res);
   }
-}
-
-module.exports = Update;
+};

@@ -24,7 +24,7 @@ As operações disponíveis são:
 <br>
 
 ## :rocket: Run project
-to run the project, it is recommended to clone it.
+To run the project it is recommended to clone it.
 
 <br>
 
